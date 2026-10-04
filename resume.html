@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Jose Paulo Santiago | Résumé</title>
+  <meta
+    name="description"
+    content="Professional résumé of Jose Paulo Santiago, Senior Software Architect and Technical Expert."
+  >
+  <meta name="robots" content="index, follow">
+
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #566178;
+      --accent: #087f78;
+      --border: #d9dee8;
+      --surface: #f4f7fa;
+      --paper: #ffffff;
+      --page: #e9edf2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      padding: 14px 24px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 42px;
+      padding: 0 17px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: var(--paper);
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .button-primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .resume {
+      width: min(calc(100% - 32px), 920px);
+      margin: 32px auto;
+      padding: 58px 64px;
+      background: var(--paper);
+      box-shadow: 0 18px 55px rgba(23, 32, 51, 0.12);
+    }
+
+    .resume-header {
+      padding-bottom: 28px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .resume-header h1 {
+      margin: 0;
+      font-size: 2.55rem;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .professional-title {
+      margin: 13px 0 0;
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: 750;
+    }
+
+    .contact-list {
+      display: flex;
+      margin: 19px 0 0;
+      padding: 0;
+      flex-wrap: wrap;
+      gap: 7px 18px;
+      color: var(--muted);
+      list-style: none;
+      font-size: 0.88rem;
+    }
+
+    .contact-list li:not(:last-child)::after {
+      margin-left: 18px;
+      color: var(--border);
+      content: "·";
+    }
+
+    .resume-section {
+      margin-top: 34px;
+    }
+
+    .resume-section h2 {
+      margin: 0 0 17px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid var(--border);
+      color: var(--accent);
+      font-size: 0.82rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .summary {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .strengths {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .role {
+      margin-top: 28px;
+      break-inside: avoid;
+    }
+
+    .role:first-of-type {
+      margin-top: 0;
+    }
+
+    .role-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .role-heading h3 {
+      margin: 0;
+      font-size: 1.08rem;
+    }
+
+    .role-date {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 650;
+    }
+
+    .company {
+      margin: 3px 0 0;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .role ul {
+      margin: 13px 0 0;
+      padding-left: 20px;
+    }
+
+    .role li {
+      margin: 7px 0;
+      color: var(--muted);
+    }
+
+    .role li::marker {
+      color: var(--accent);
+    }
+
+    .education {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .education p {
+      margin: 0;
+    }
+
+    .education strong {
+      display: block;
+    }
+
+    .note {
+      margin: 35px 0 0;
+      color: var(--muted);
+      font-size: 0.73rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .resume {
+        width: 100%;
+        margin: 0;
+        padding: 40px 24px;
+        box-shadow: none;
+      }
+
+      .resume-header h1 {
+        font-size: 2rem;
+      }
+
+      .contact-list {
+        flex-direction: column;
+      }
+
+      .contact-list li::after {
+        display: none;
+      }
+
+      .role-heading,
+      .education {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 13mm 15mm;
+      }
+
+      body {
+        background: #ffffff;
+        font-size: 9.5pt;
+        line-height: 1.38;
+      }
+
+      .toolbar {
+        display: none;
+      }
+
+      .resume {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .resume-header {
+        padding-bottom: 14px;
+      }
+
+      .resume-header h1 {
+        font-size: 25pt;
+      }
+
+      .professional-title {
+        margin-top: 7px;
+        font-size: 11pt;
+      }
+
+      .contact-list {
+        margin-top: 10px;
+        font-size: 8.5pt;
+      }
+
+      .resume-section {
+        margin-top: 18px;
+      }
+
+      .resume-section h2 {
+        margin-bottom: 9px;
+        padding-bottom: 4px;
+        font-size: 8.5pt;
+      }
+
+      .summary {
+        font-size: 9.5pt;
+      }
+
+      .role {
+        margin-top: 14px;
+        break-inside: auto;
+      }
+
+      .role-heading h3 {
+        font-size: 10pt;
+      }
+
+      .company {
+        font-size: 8.5pt;
+      }
+
+      .role ul {
+        margin-top: 6px;
+      }
+
+      .role li {
+        margin: 3px 0;
+      }
+
+      .note {
+        display: none;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="toolbar" aria-label="Résumé actions">
+    <a class="button" href="index.html">← Return to portfolio</a>
+
+    <button
+      class="button button-primary"
+      type="button"
+      onclick="window.print()"
+    >
+      Print or save as PDF
+    </button>
+
+    <a
+      class="button"
+      href="resume.html"
+      download="Jose-Paulo-Santiago-Resume.html"
+    >
+      Download HTML
+    </a>
+  </nav>
+
+  <main class="resume">
+    <header class="resume-header">
+      <h1>Jose Paulo Santiago</h1>
+
+      <p class="professional-title">
+        Senior Software Architect | Technical Expert
+      </p>
+
+      <ul class="contact-list" aria-label="Contact information">
+        <li>Łódź, Poland</li>
+        <li><a href="tel:693583345">693 583 345</a></li>
+        <li>
+          <a href="mailto:jopasantiago@gmail.com">
+            jopasantiago@gmail.com
+          </a>
+        </li>
+      </ul>
+    </header>
+
+    <section class="resume-section">
+      <h2>Professional Profile</h2>
+
+      <p class="summary">
+        Software architect and technical expert with 15+ years of experience
+        delivering, modernising, and operating complex enterprise platforms.
+        Focused on systems with mixed functional and object-oriented programming
+        paradigms. Experienced in hands-on architecture, technical leadership,
+        security ownership, high-impact production support, and safe delivery of
+        business-critical capabilities. Known for quickly understanding
+        unfamiliar systems and applying the language, framework, database, or
+        infrastructure required to deliver a robust solution.
+      </p>
+    </section>
+
+    <section class="resume-section">
+      <h2>Core Strengths</h2>
+
+      <p class="strengths">
+        Language-Agnostic Engineering · System &amp; Solution Architecture ·
+        Concurrent &amp; Distributed Systems · High Availability · Enterprise
+        Integration · Performance Engineering · Functional Programming ·
+        Object-Oriented Programming · Scala · Java · Azure · Cosmos DB ·
+        Cassandra · MariaDB · MySQL · CI/CD · Automated Testing · OWASP · Secure
+        Software Development · Technical &amp; Operational Risk Assessment ·
+        Critical Production Incident Response · Git · Agile/Scrum · Technical
+        Leadership &amp; Mentoring
+      </p>
+    </section>
+
+    <section class="resume-section">
+      <h2>Professional Experience</h2>
+
+      <article class="role">
+        <div class="role-heading">
+          <h3>System Architect</h3>
+          <span class="role-date">January 2022 – Present</span>
+        </div>
+
+        <p class="company">IDEMIA · Poland</p>
+
+        <ul>
+          <li>
+            Define architecture and technical direction for enterprise
+            eUICC/SIM platforms, integrations, reporting capabilities, and
+            production services.
+          </li>
+          <li>
+            Act as a hands-on technical expert for complex and
+            business-critical work, including major feature design and deep
+            implementation guidance.
+          </li>
+          <li>
+            Lead critical production-bug and escalation response, coordinating
+            investigation, remediation, implementation, testing, integration,
+            validation, and safe release.
+          </li>
+          <li>
+            Maintain delivery continuity during smaller production incidents,
+            preventing operational issues from unnecessarily derailing planned
+            work.
+          </li>
+          <li>
+            Apply a problem-first, language-agnostic approach to unfamiliar
+            applications and technology stacks requiring diagnosis,
+            modernisation, repair, or stabilisation.
+          </li>
+          <li>
+            Built, hired, trained, and mentored an engineering team while
+            establishing technical standards and collaborative delivery
+            practices.
+          </li>
+          <li>
+            Increased delivery from 1–2 to 5–8 features per release while the
+            team approximately doubled in size—an estimated 2–3× increase in
+            per-engineer productivity despite greater product complexity.
+          </li>
+          <li>
+            Lead solution design from business requirements through technical
+            design, stakeholder alignment, implementation delegation, and
+            hands-on delivery of deep or high-risk functionality.
+          </li>
+          <li>
+            Coordinated and supported major Cosmos DB customer migrations.
+          </li>
+          <li>
+            Collaborate with architects, technical leads, SRE, and deployment
+            teams on high availability and technical design.
+          </li>
+          <li>
+            Serve as security champion, conducting OWASP-oriented analysis and
+            orchestrating remediation of findings from OWASP reviews and Sonar.
+          </li>
+          <li>
+            Perform functional and technical risk assessments for features and
+            releases, covering access restrictions, cloning, outages,
+            deployment risks, and operational continuity.
+          </li>
+          <li>
+            Partner with security leadership and delivery stakeholders to
+            establish technical, functional, deployment, and organisational
+            security controls.
+          </li>
+          <li>
+            Drive architectural decisions concerning incremental delivery,
+            simplification, maintainability, resilience, and long-term platform
+            evolution.
+          </li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-heading">
+          <h3>Senior Software Engineer</h3>
+          <span class="role-date">March 2017 – December 2021</span>
+        </div>
+
+        <p class="company">IDEMIA · Poland</p>
+
+        <ul>
+          <li>
+            Developed, deployed, upgraded, maintained, and supported enterprise
+            software in production.
+          </li>
+          <li>
+            Resolved complex issues requiring rapid understanding of unfamiliar
+            codebases, integrations, deployment processes, and operational
+            constraints.
+          </li>
+          <li>
+            Delivered technical designs and implementations across teams and
+            contributed to critical fixes, system integration, release
+            readiness, and deployment support.
+          </li>
+          <li>
+            Mentored developers and QA automation engineers in engineering
+            practices, testing, and delivery quality.
+          </li>
+          <li>
+            Improved continuous integration, automated testing, deployment, and
+            operational-support practices.
+          </li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-heading">
+          <h3>Software Architect</h3>
+          <span class="role-date">2015 – February 2017</span>
+        </div>
+
+        <p class="company">IDEMIA · Manila, Philippines</p>
+
+        <ul>
+          <li>
+            Designed and delivered enterprise software solutions from
+            requirements analysis through production deployment.
+          </li>
+          <li>
+            Led technical design, integration support, troubleshooting, and
+            collaboration across engineering and business teams.
+          </li>
+          <li>
+            Took ownership of difficult application problems, identified
+            practical improvements, and guided implementation through
+            production.
+          </li>
+          <li>
+            Mentored engineers in architecture, development practices, and
+            technical problem solving.
+          </li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-heading">
+          <h3>Junior Software Architect</h3>
+          <span class="role-date">October 2013 – 2015</span>
+        </div>
+
+        <p class="company">IDEMIA · Manila, Philippines</p>
+
+        <ul>
+          <li>
+            Helped redevelop a massively concurrent system using
+            service-oriented architecture and modern engineering practices.
+          </li>
+          <li>Improved application-load performance by up to 1000%.</li>
+          <li>
+            Advanced test-driven development, automated performance and
+            component testing, and continuous integration.
+          </li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-heading">
+          <h3>Software Engineer</h3>
+          <span class="role-date">March 2012 – October 2013</span>
+        </div>
+
+        <p class="company">IDEMIA · Manila, Philippines</p>
+
+        <ul>
+          <li>
+            Provided technical leadership and solution design for customer
+            requirements.
+          </li>
+          <li>
+            Authored technical specifications and collaborated across teams on
+            business and technical analysis.
+          </li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-heading">
+          <h3>Junior Software Engineer</h3>
+          <span class="role-date">November 2010 – March 2012</span>
+        </div>
+
+        <p class="company">IDEMIA · Manila, Philippines</p>
+
+        <ul>
+          <li>
+            Served as a pioneer developer for NFC service-management software.
+          </li>
+          <li>
+            Contributed to technical design and software delivery across
+            multiple teams.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="resume-section">
+      <h2>Education</h2>
+
+      <div class="education">
+        <p>
+          <strong>Bachelor’s Degree</strong>
+          University of the Philippines
+        </p>
+
+        <span class="role-date">2009</span>
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2>Additional Information</h2>
+      <p class="strengths"><strong>Languages:</strong> English — C2+</p>
+    </section>
+
+    <p class="note">
+      For the most current version, visit the accompanying online portfolio.
+    </p>
+  </main>
+</body>
+</html>

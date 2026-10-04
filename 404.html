@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    .error-page {
+      display: grid;
+      min-height: 100svh;
+      padding: 32px;
+      place-items: center;
+      text-align: center;
+    }
+
+    .error-content {
+      max-width: 650px;
+    }
+
+    .error-code {
+      margin: 0;
+      color: var(--accent);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .error-content h1 {
+      margin: 18px 0;
+      font-size: clamp(3rem, 10vw, 6rem);
+      letter-spacing: -0.06em;
+      line-height: 1;
+    }
+
+    .error-content > p:not(.error-code) {
+      margin: 0 auto 32px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="error-page">
+    <div class="error-content">
+      <p class="error-code">ERROR 404</p>
+      <h1>Page not found.</h1>
+      <p>
+        The page may have moved, or the address may be incorrect.
+      </p>
+      <a class="button button-primary" href="/">
+        Return home
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
